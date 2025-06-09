@@ -1,0 +1,235 @@
+/* Nice Weather App Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container */
+.main-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  justify-content: center;
+}
+
+/* Main heading */
+.main-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.search-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Input field */
+.search-input {
+  flex: 1;
+  max-width: 250px;
+  padding: 15px 20px;
+  border: 2px solid #e1e8ed;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Search button */
+.search-button {
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.search-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(-1px);
+}
+
+/* Error message */
+.error-message {
+  background: #fee;
+  color: #c53030;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border-left: 4px solid #c53030;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Loading message */
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: 600;
+  padding: 20px;
+  background: #f0f4ff;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Weather card */
+.weather-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* City name in weather card */
+.city-name {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+/* Temperature text */
+.temperature {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temperature strong {
+  font-weight: 700;
+}
+
+/* Condition text */
+.condition {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.condition strong {
+  font-weight: 700;
+}
+
+/* Weather icon */
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.weather-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .main-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .search-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-input {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+  
+  .weather-card {
+    padding: 20px;
+  }
+  
+  .city-name {
+    font-size: 1.5rem;
+  }
+  
+  .temperature,
+  .condition {
+    font-size: 1rem;
+  }
+  
+  .weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
